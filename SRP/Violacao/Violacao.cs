@@ -5,9 +5,17 @@ namespace SOLID.SRP
         public int Id { get; set; }
         public decimal Valor { get; set; }
 
-        // Faz tudo errado (violação)
+        // Faz tudo sozinho → VIOLA SRP
         public decimal CalcularImposto() => Valor * 0.1m;
-        public void Salvar() => System.Console.WriteLine("[SRP Violação] Salvando pedido...");
-        public void Imprimir() => System.Console.WriteLine("[SRP Violação] Imprimindo pedido...");
+
+        public void Salvar()
+        {
+            System.Console.WriteLine("[SRP - Violação] Salvando pedido no banco...");
+        }
+
+        public void Imprimir()
+        {
+            System.Console.WriteLine("[SRP - Violação] Imprimindo pedido...");
+        }
     }
 }
